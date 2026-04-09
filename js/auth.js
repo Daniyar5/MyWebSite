@@ -12,19 +12,7 @@ regBtn.onclick = () => {
         <input type="password" id="reg-pass" placeholder="Пароль"><br><br>
         <button id="reg-submit" class="button">Зарегистрироваться<t/buton>
     `;
-
-    document.getElementById('reg-submit').onclick = () => {
-        const login = document.getElementById('reg-login').value;
-        const pass = document.getElementById('reg-pass').value;
-
-        if (!login || !pass) {
-            alert("Заполни все поля");
-            return;
-        }
-
-        localStorage.setItem(login, pass);
-        alert("Регистрация успешна");
-    };
+    
 };
 
 // РЕНДЕР ВХОДА
@@ -36,18 +24,6 @@ loginBtn.onclick = () => {
         <button id="log-submit" class="button">Войти</button>
     `;
 
-    document.getElementById('log-submit').onclick = () => {
-        const login = document.getElementById('log-login').value;
-        const pass = document.getElementById('log-pass').value;
-
-        const savedPass = localStorage.getItem(login);
-
-        if (savedPass === pass) {
-            imagesBlock.innerHTML = `<h2>Добро пожаловать, ${login} 😎</h2>`;
-        } else {
-            alert("Неверный логин или пароль");
-        }
-    };
 };
 
 
@@ -57,6 +33,7 @@ aboutBtn.onclick = () => {
         <h2>О САЙТЕ</h2>
         Сайт с мемами <br><br>
         Автор сайта: Омурбеков Данияр Бакытбекович <br>
+        Номер: +996 555 000819
     `;
 
 };

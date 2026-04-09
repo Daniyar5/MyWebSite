@@ -117,3 +117,8 @@ footer {
    height: 80px;
    border-top: 3px solid #3d3019;
 }
+
+#reg-submit,
+#log-submit {
+   margin-bottom: 15px;
+}

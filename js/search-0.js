@@ -5,13 +5,12 @@ const randomMemeBtn = document.getElementById('randomMeme-btn');
 const nextBtn = document.getElementById('next-btn');
 const prevBtn = document.getElementById('prev-btn');
 
-// Твой API Ключ Giphy
 const API_KEY = 'SJjMvRfscMm8pNMCJZ8N3Q3LFXbAVDGY';
 
 let currentQuery = ''; 
 let history = []; 
 let currentIndex = -1; 
-let offset = 0; // Для подгрузки следующих гифок
+let offset = 0; 
 
 async function loadMemes(query = '', isNewSearch = true) {
     mainBlock.innerHTML = '<h3 style="padding: 20px;">Ищем крутые гифки... 🎬</h3>';
@@ -19,7 +18,7 @@ async function loadMemes(query = '', isNewSearch = true) {
 
     if (isNewSearch) {
         offset = 0;
-        history = []; // Очищаем историю при новом поиске
+        history = [];
         currentIndex = -1; 
     } else {
         offset += 10;
@@ -46,8 +45,6 @@ async function loadMemes(query = '', isNewSearch = true) {
             return;
         }
 
-        // КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ:
-        // Добавляем новые гифки в историю и двигаем индекс вперед
         history.push(gifs);
         currentIndex++;
         
@@ -64,7 +61,6 @@ function displayMemes(gifs) {
     mainBlock.innerHTML = ''; 
     gifs.forEach(gif => {
         const img = document.createElement('img');
-        // Используем fixed_height, чтобы гифки были примерно одного размера и быстрее грузились
         img.src = gif.images.fixed_height.url; 
         img.className = 'meme-image';
         img.loading = "lazy";
@@ -74,7 +70,6 @@ function displayMemes(gifs) {
 
 function updateButtons() {
     prevBtn.disabled = currentIndex <= 0;
-    // Кнопка вперед активна всегда (либо для перехода по истории, либо для загрузки новых)
     nextBtn.disabled = false; 
 }
 
@@ -87,7 +82,7 @@ searchForm.addEventListener('submit', (e) => {
     loadMemes(currentQuery, true);
 });
 
-// Кнопка Тренды (вместо рандома)
+// Кнопка МЕМ ДНЯ
 randomMemeBtn.addEventListener('click', () => {
     currentQuery = ''; 
     searchInput.value = '';
@@ -96,20 +91,18 @@ randomMemeBtn.addEventListener('click', () => {
     loadMemes('', true); 
 });
 
-// Кнопка Вперед
+// Кнопка Туда
 nextBtn.addEventListener('click', () => {
-    // Если в истории есть следующая страница — просто показываем её
     if (currentIndex < history.length - 1) {
         currentIndex++;
         displayMemes(history[currentIndex]);
         updateButtons();
     } else {
-        // Если страниц в истории больше нет — качаем новые из API
         loadMemes(currentQuery, false);
     }
 });
 
-// Кнопка Назад
+// Кнопка Сюда
 prevBtn.addEventListener('click', () => {
     if (currentIndex > 0) {
         currentIndex--;
@@ -118,5 +111,4 @@ prevBtn.addEventListener('click', () => {
     }
 });
 
-// Запуск при загрузке страницы
 loadMemes();
