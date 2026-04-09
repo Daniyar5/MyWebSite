@@ -73,6 +73,11 @@ input::placeholder {
    background: #3d3019;
 }
 
+button:hover {
+   cursor: pointer;
+   opacity: 80%;
+}
+
 /* Позиция кнопок */
 header button {
    margin-top: 10px;
