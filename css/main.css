@@ -1,0 +1,119 @@
+ * {
+    margin: 0;
+    padding: 0;
+ }
+
+ /* Фон */
+body {
+   background: url('../images/bg.jpeg') fixed;
+ }
+
+
+
+ /* Шапка */
+header {
+   background: #3d3019;
+   opacity: 95%;
+   height: 50px;
+   width: 100%;
+ }
+
+ main header {
+   border-radius: 20px 20px 0 0;
+ }
+
+
+
+ /* Основное */
+main {
+   width: 1200px;
+   margin: auto;
+}
+
+footer {
+   background: white;
+   border-radius: 0 0 20px 20px;
+}
+
+#images {
+   background: white;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
+
+.meme-image {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px black;
+  margin: 25px 0 25px 0;
+}
+
+
+
+/* Кнопки */
+button,
+header #search-input,
+input{
+   background: #daa447;
+   padding: 6px 10px;
+   border-radius: 10px;
+   color: white;
+   border: none;
+   margin: 0 5px;
+}
+
+input::placeholder {
+   color: white;
+}
+
+#images input {
+   background: #3d3019;
+}
+
+/* Позиция кнопок */
+header button {
+   margin-top: 10px;
+   float: left;
+}
+
+#search-form input {
+   float: left;
+   margin-top: 12px;
+}
+
+#home-btn {
+   margin-left: 170px;
+}
+
+#reg-btn,
+#login-btn {
+   float: right;
+}
+
+#login-btn {
+   margin-right: 170px;
+}
+
+#randomMeme-btn {
+   margin-left: 30px;
+}
+
+#search-form {
+   float: right;
+   margin-right: 30px;
+}
+
+#search-form img {
+   margin-top: 3px;
+}
+
+footer {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 80px;
+   border-top: 3px solid #3d3019;
+}

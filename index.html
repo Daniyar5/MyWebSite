@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme - смешные картинки</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <button id="home-btn"><img src="images/home.png" alt="Home">Meme</button>
+        <button id="login-btn">Вход</button>
+        <button id="reg-btn">Регистрация</button>
+    </header>
+
+    <img src="images/meme.png" alt="Meme">
+
+    <main>
+        <header>
+            <button id="randomMeme-btn">МЕМ ДНЯ</button>
+            <button id="about-btn">О САЙТЕ</button>
+            <form id="search-form"> 
+                <input type="text" id="search-input" name="q" placeholder="Найти мем..." required>
+                <button type="submit"><img src="images/search.png" alt=""></button>
+            </form>
+        </header>
+
+        <div id="images"></div>
+
+        <footer>
+            <button id="prev-btn">⬅ Сюда</button>
+            <button id="next-btn">Туда ➡</button>
+        </footer>
+    </main>
+
+    <script src="js/search-0.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
