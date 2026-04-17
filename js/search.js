@@ -111,4 +111,26 @@ prevBtn.addEventListener('click', () => {
     }
 });
 
+
+// Находим все теги b внутри боковой панели
+const tags = document.querySelectorAll('aside b');
+
+tags.forEach(tag => {
+    tag.addEventListener('click', () => {
+        // Убираем символ # из текста тега, чтобы получить чистое слово для поиска
+        const tagText = tag.innerText.replace('#', '').toLowerCase();
+        
+        // Устанавливаем текст в инпут поиска (для визуальной связи)
+        searchInput.value = tagText;
+        
+        // Обнуляем текущее состояние поиска как при новом запросе
+        currentQuery = tagText;
+        history = []; 
+        currentIndex = -1;
+        
+        // Вызываем вашу основную функцию загрузки
+        loadMemes(currentQuery, true);
+    });
+});
+
 loadMemes();
