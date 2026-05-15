@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme - смешные картинки</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <button id="home-btn">Meme</button>
+        </a>
+        <div id="auth-controls"></div>
+    </header>
+
+    <div style="text-align: center; margin: 20px 0;">
+        <img src="images/meme.png" alt="Meme" style="max-width: 300px; border-radius: 10px;">
+    </div>
+
+    <main>
+        <header class="main-header">
+            <button id="randomMeme-btn">МЕМ ДНЯ</button>
+            <button id="my-likes-btn" style="display:none;">МОИ ЛАЙКИ</button>
+            <button id="about-btn">О САЙТЕ</button>
+            <form id="search-form" style="display:flex;"> 
+                <input type="text" id="search-input" name="q" placeholder="Найти мем..." required>
+                <button type="submit">Поиск</button>
+            </form>
+        </header>
+
+        <div class="content-wrapper">
+            <div id="images"></div>
+            <aside>
+                <div>
+                    <b>#Cat</b><b>#Doge</b><b>#Meme</b>
+                    <b>#Bonny</b><b>#Horse</b><b>#Love</b>
+                    <b>#Jojo</b><b>#One Piece</b>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer>
+        <button id="prev-btn" disabled>Туда</button>
+        <button id="next-btn" disabled>Сюда</button>
+    </footer>
+
+    <!-- Модальное окно авторизации -->
+    <div id="auth-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn">&times;</span>
+            <h2 id="modal-title">Вход</h2>
+            <form id="auth-form">
+                <input type="text" id="auth-login" placeholder="Логин" required>
+                <input type="password" id="auth-pass" placeholder="Пароль" required>
+                <button type="submit" id="auth-submit">Войти</button>
+            </form>
+            <p id="auth-error" style="color: red;"></p>
+        </div>
+    </div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/search.js"></script>
+</body>
+</html>
