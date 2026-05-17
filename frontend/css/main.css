@@ -1,31 +1,234 @@
-* { margin: 0; padding: 0; }
-body { background: url('../images/bg.jpeg') fixed; background-color: #2c2111; font-family: sans-serif; }
-header { background: #3d3019; opacity: 0.95; height: 60px; width: 100%; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; box-sizing: border-box; }
-.main-header { border-radius: 20px 20px 0 0; margin-top: 0; padding: 15px; display: flex; align-items: center; justify-content: flex-start; flex-wrap: wrap; gap: 10px; }
-main { width: 1200px; margin: auto; max-width: 95%; }
-footer { background: white; border-radius: 0 0 20px 20px; width: 1200px; margin: auto; max-width: 95%; padding: 15px; text-align: center; }
-#images { background: white; display: flex; flex-direction: column; align-items: flex-start; width: 70%; padding-bottom: 20px; min-height: 500px;}
-.meme-image { width: 100%; max-width: 600px; height: auto; border-radius: 8px; box-shadow: 0 4px 15px black; margin: 25px 0 25px 50px; }
-aside { background: white; width: 30%; padding: 20px; box-sizing: border-box; border-left: 2px solid #f0f0f0; }
-aside b { display: inline-block; margin: 5px; padding: 8px 12px; background: #eee; border-radius: 5px; cursor: pointer; color: #333; }
-aside b:hover { background: #daa447; color: white; }
-.content-wrapper { display: flex; width: 100%; }
-button, input { background: #daa447; padding: 8px 15px; border-radius: 10px; color: white; border: none; font-weight: bold; font-size: 14px;}
-input { background: #3d3019; }
-input::placeholder { color: #ccc; }
-button:hover { cursor: pointer; opacity: 0.8; }
-button:disabled { background: #ccc; cursor: not-allowed; }
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: url('../images/bg.jpeg') fixed;
+  background-color: #2c2111;
+  font-family: sans-serif;
+}
+
+header {
+  background: #3d3019;
+  opacity: 0.95;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.main-header {
+  border-radius: 20px 20px 0 0;
+  margin-top: 0;
+  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+main {
+  width: 1200px;
+  margin: auto;
+  max-width: 95%;
+}
+
+footer {
+  background: white;
+  border-radius: 0 0 20px 20px;
+  width: 1200px;
+  margin: auto;
+  max-width: 95%;
+  padding: 15px;
+  text-align: center;
+}
+
+#images {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 70%;
+  padding-bottom: 20px;
+  min-height: 500px;
+}
+
+.meme-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px black;
+  margin: 25px 0 25px 50px;
+}
+
+aside {
+  background: white;
+  width: 30%;
+  padding: 20px;
+  box-sizing: border-box;
+  border-left: 2px solid #f0f0f0;
+}
+
+aside b {
+  display: inline-block;
+  margin: 5px;
+  padding: 8px 12px;
+  background: #eee;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #333;
+}
+
+aside b:hover {
+  background: #daa447;
+  color: white;
+}
+
+.content-wrapper {
+  display: flex;
+  width: 100%;
+}
+
+button, 
+input {
+  background: #daa447;
+  padding: 8px 15px;
+  border-radius: 10px;
+  color: white;
+  border: none;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+input {
+  background: #3d3019;
+}
+
+input::placeholder {
+  color: #ccc;
+}
+
+button:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
 
 /* Карточка мема с лайком */
-.meme-card { position: relative; display: inline-block; width: 100%; }
-.like-btn { position: absolute; bottom: 35px; right: 20px; background: rgba(255, 255, 255, 0.9); color: #ccc; font-size: 24px; border-radius: 50%; width: 45px; height: 45px; display: flex; justify-content: center; align-items: center; border: 2px solid transparent; cursor: pointer; transition: 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
-.like-btn:hover { transform: scale(1.1); }
-.like-btn.liked { background: #ff4b4b; color: white; border-color: #ff4b4b; }
+.meme-card {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.like-btn {
+  position: absolute;
+  bottom: 35px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #ccc;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+.like-btn:hover {
+  transform: scale(1.1);
+}
+
+.like-btn.liked {
+  background: #ff4b4b;
+  color: white;
+  border-color: #ff4b4b;
+}
 
 /* Модальное окно */
-.modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.7); }
-.modal-content { background-color: #3d3019; color: white; margin: 10% auto; padding: 30px; border-radius: 12px; width: 320px; text-align: center; box-shadow: 0 5px 25px rgba(0,0,0,0.5); }
-.modal-content input { margin-bottom: 15px; width: 90%; padding: 12px; border-radius: 8px; box-sizing: border-box; }
-.modal-content button { width: 90%; padding: 12px; font-size: 16px; margin-top: 10px; }
-.close-btn { color: #aaa; float: right; font-size: 28px; font-weight: bold; cursor: pointer; margin-top: -15px; margin-right: -10px;}
-.close-btn:hover { color: white; }
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #3d3019;
+  color: white;
+  margin: 10% auto;
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.modal-content input {
+  margin-bottom: 15px;
+  width: 90%;
+  padding: 12px;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.modal-content button {
+  width: 90%;
+  padding: 12px;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: -15px;
+  margin-right: -10px;
+}
+
+.close-btn:hover {
+  color: white;
+}
+
+
+
+#search-form {
+  margin-left: auto;
+}
+
+#search-form button{
+  background: none;
+}
+
+#search-input {
+  border: 2px solid #daa447;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#search-input:focus {
+  border-color: white;
+  box-shadow: 0 0 8px rgba(218, 164, 71, 0.6);
+}
